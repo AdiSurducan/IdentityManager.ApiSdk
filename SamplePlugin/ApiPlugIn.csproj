@@ -3,7 +3,7 @@
     <ProjectGuid>{0D76E5C8-1A6B-48BE-8A27-D3F881041DEE}</ProjectGuid>
     <RootNamespace>Api</RootNamespace>
     <TargetFramework>net8.0</TargetFramework>
-    <ReferencePath>c:\Program Files\One Identity</ReferencePath>
+    <ReferencePath>C:\Temp\One Identity Manager 9.3 HQ</ReferencePath>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <AssemblyName>CCC.CompositionApi.Server.Plugin</AssemblyName>
   </PropertyGroup>
