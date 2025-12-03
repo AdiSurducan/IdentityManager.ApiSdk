@@ -1,0 +1,22 @@
+meta {
+  name: GenericNames5
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/portal/generic/Person?OrderBy=FirstName&withProperties=-FirstName,LastName&PageSize=5
+  body: none
+  auth: inherit
+}
+
+params:query {
+  OrderBy: FirstName
+  withProperties: -FirstName,LastName
+  PageSize: 5
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

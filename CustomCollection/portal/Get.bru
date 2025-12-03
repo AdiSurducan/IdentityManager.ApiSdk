@@ -1,0 +1,20 @@
+meta {
+  name: Get
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/portal/generic/person?filter=[{"Type":2,"Expression":{"Expressions":[{"PropertyId":"Remarks","Operator":"LIKE","LogOperator":0,"Value":"API Development Training"}],"LogOperator":0}}]
+  body: none
+  auth: inherit
+}
+
+params:query {
+  filter: [{"Type":2,"Expression":{"Expressions":[{"PropertyId":"Remarks","Operator":"LIKE","LogOperator":0,"Value":"API Development Training"}],"LogOperator":0}}]
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

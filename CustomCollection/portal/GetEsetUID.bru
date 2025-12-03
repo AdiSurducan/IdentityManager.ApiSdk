@@ -1,0 +1,21 @@
+meta {
+  name: GetEsetUID
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/portal/generic/ESet?filter=[{"Type":2,"Expression":{"Expressions":[{"PropertyId":"Ident_ESet","Operator":"LIKE","LogOperator":0,"Value":"API Training ESet"}],"LogOperator":0}}]&withProperties=-UID_Eset
+  body: none
+  auth: inherit
+}
+
+params:query {
+  filter: [{"Type":2,"Expression":{"Expressions":[{"PropertyId":"Ident_ESet","Operator":"LIKE","LogOperator":0,"Value":"API Training ESet"}],"LogOperator":0}}]
+  withProperties: -UID_Eset
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

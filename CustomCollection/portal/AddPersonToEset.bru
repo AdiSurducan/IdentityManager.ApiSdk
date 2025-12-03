@@ -1,0 +1,36 @@
+meta {
+  name: AddPersonToEset
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/portal/generic/PersonHasEset
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "Reload": true,
+    "Objects": [
+      {    
+        "Data": [
+          {
+           "Name":"UID_Person",
+            "Value":"662d543b-76f9-4cdf-a131-ff1304b496c9"
+          },
+          {
+           "Name":"UID_Eset",
+            "Value":"eede8405-bf44-4861-be83-607b4d8d51f2"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

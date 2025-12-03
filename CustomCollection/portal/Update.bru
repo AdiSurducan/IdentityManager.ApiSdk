@@ -1,0 +1,35 @@
+meta {
+  name: Update
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/portal/generic/person
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "Reload": true,
+    "Objects": [
+      {
+        "Keys": [
+          "662d543b-76f9-4cdf-a131-ff1304b496c9"
+        ],
+        "Data": [
+          {
+            "Name": "FirstName",
+            "Value": "Johnny"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
