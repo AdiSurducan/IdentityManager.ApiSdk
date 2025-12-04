@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<HelpItems xmlns="http://msh" schema="maml">
+	<command:command xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+		<command:details>
+			<command:name>New-ProjectorShell</command:name>
+			<command:verb>New</command:verb>
+			<command:noun>ProjectorShell</command:noun>
+			<maml:description>
+				<maml:para>Cmdlet to create a new synchronization shell based on the settings of a SynchronizationEditor workspace.</maml:para>
+			</maml:description>
+		</command:details>
+		<maml:description>
+			<maml:para>Cmdlet to create a new synchronization shell based on the settings of a SynchronizationEditor workspace.</maml:para>
+		</maml:description>
+		<command:syntax>
+			<command:syntaxItem>
+				<maml:name>New-ProjectorShell</maml:name>
+				<command:parameter required="True">
+					<maml:name>Workspace</maml:name>
+					<command:parameterValue required="True">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="True">
+					<maml:name>WorkspaceParameter</maml:name>
+					<command:parameterValue required="False">Hashtable</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False">
+					<maml:name>SaveToDatabase</maml:name>
+					<command:parameterValue required="False">SwitchParameter</command:parameterValue>
+				</command:parameter>
+			</command:syntaxItem>
+		</command:syntax>
+		<command:parameters>
+
+			<command:parameter required="True" variableLength="False" globbing="False" pipelineInput="False" >
+				<maml:name>Workspace</maml:name>
+				<maml:description>
+					<maml:para>Full qualified or relative path to the sews-file which contains the definition of the workspace to use.</maml:para>
+				</maml:description>
+				<command:parameterValue required="True">String</command:parameterValue>
+				<dev:type>System.String</dev:type>
+
+			</command:parameter>
+
+			<command:parameter required="False" variableLength="False" globbing="False" pipelineInput="False" >
+				<maml:name>WorkspaceParameter</maml:name>
+				<maml:description>
+					<maml:para>Defines the value of a workspace defined parameter. An existing value will be overwritten.</maml:para>
+				</maml:description>
+				<command:parameterValue required="False">Hashtable</command:parameterValue>
+				<dev:type>System.Hashtable</dev:type>
+
+			</command:parameter>
+
+			<command:parameter required="False" variableLength="False" globbing="False" pipelineInput="False" >
+				<maml:name>SaveToDatabase</maml:name>
+				<maml:description>
+					<maml:para>Save results to database.</maml:para>
+				</maml:description>
+				<command:parameterValue required="True">SwitchParameter</command:parameterValue>
+				<dev:type>SwitchParameter</dev:type>
+				<dev:defaultvalue>False</dev:defaultvalue>
+			</command:parameter>
+			
+		</command:parameters>
+	</command:command>
+</HelpItems>

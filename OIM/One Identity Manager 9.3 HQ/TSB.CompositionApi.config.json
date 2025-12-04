@@ -1,0 +1,170 @@
+{
+  "AppliesTo": "portal",
+  "Data": {
+    "ServerConfig/OwnershipConfig/EditableFields/SPSGroup": [
+      "Description",
+      "DisplayName",
+      "DistinguishedName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_SPSSite"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/UNXGroup": [
+      "DisplayName",
+      "GroupName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_UNXHost"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/AADDirectoryRole": [
+      "DisplayName",
+      "Description",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+	  "RiskIndex",
+      "UID_AADOrganization",
+      "UNSDisplay"	  
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/AADUser": [
+      "DisplayName"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/AADSubSku": [
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_AccProduct",
+      "UNSDisplay"
+	],
+    "ServerConfig/OwnershipConfig/EditableFields/AADGroup": [
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_AADOrganization"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/ADSAccount": [
+      "cn",
+	  "DisplayName",
+	  "Description",
+      "UID_Person",
+      "ObjectKeyManager",
+      "NeverConnectToPerson"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/ADSContact": [
+      "cn",
+	  "DisplayName",
+	  "Description",
+      "UID_Person",
+      "ObjectKeyManager",
+      "NeverConnectToPerson"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/ADSGroup": [
+      "cn",
+	  "DisplayName",
+	  "RiskIndex",
+	  "Description",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/CSMGroup": [
+      "CanonicalName",
+      "cn",
+      "Description",
+      "DisplayName",
+      "DistinguishedName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_CSMContainer"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/GAPGroup": [
+      "Description",
+      "GroupName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_GAPCustomer"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/GAPPaSku": [
+      "SkuName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_GAPCustomer"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/LDAPGroup": [
+      "CanonicalName",
+      "cn",
+      "Description",
+      "DisplayName",
+      "DistinguishedName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_LDAPContainer"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/NDOGroup": [
+      "CanonicalName",
+      "cn",
+      "Description",
+      "DisplayName",
+      "DistinguishedName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_NDODomain"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/O3EUnifiedGroup": [
+      "AccessType",
+      "Alias",
+      "DisplayName",
+      "GroupType",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_AADOrganization"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/O3EDL": [
+      "Alias",
+      "DisplayName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_AADOrganization"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/O3SGroup": [
+      "Description",
+      "DistinguishedName",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/PAGUsrGroup": [
+      "GroupName",
+      "Description",
+      "DistinguishedName",
+      "ExternalID",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex",
+      "UID_PAGAppliance",
+      "UID_PAGIdentityProvider"
+    ]
+  }
+}

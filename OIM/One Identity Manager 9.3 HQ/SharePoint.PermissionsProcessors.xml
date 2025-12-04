@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Plugins minimumVersion="3.2.0.0">
+  <Plugin Type="QAM.SharePoint.UI.PermissionCrackers.ItemPermissionsCracker" Assembly="TitanSPClient.dll">
+    <Property>SharePoint\ResourceItem</Property>
+  </Plugin>
+  <Plugin Type="QAM.SharePoint.UI.PermissionCrackers.SCAdminPermissionsCracker" Assembly="TitanSPClient.dll">
+    <Property>SharePoint\SiteCollectionAdminRight</Property>
+  </Plugin>
+  <Plugin Type="QAM.SharePoint.UI.PermissionCrackers.WebAppPolicyPermissionsCracker" Assembly="TitanSPClient.dll">
+    <Property>SharePoint\WebAppPolicy</Property>
+  </Plugin>
+  <Plugin Type="QAM.SharePoint.UI.PermissionCrackers.FarmAdminPermissionsCracker" Assembly="TitanSPClient.dll">
+    <Property>SharePoint\FarmAdminRight</Property>
+  </Plugin>
+</Plugins>

@@ -1,0 +1,260 @@
+{
+  "AllowedHosts": "*",
+
+  "activityCompressionConfiguration": {
+    "activityCompressionConfiguration description": "Activity compression configuration. enabled: Indicates whether the scheduled compression is enabled or not.dailyExecutionTime: Time of day to perform the compression. Format is (h:m:s:[z]). If the time zone [z] is not specified universal time is assumed.compressOlderThan:  The default lower bound for activity data compression. Any activity data older than this value will be compressed.deleteOlderThan: The lower bound for activity data deletion. Any activity data older than this value will be deleted. Do not specify this value if deletion is not desired.deletionBatchSize:  The batch size used during deletion.",
+    "enabled": false,
+    "dailyExecutionTime": "23:00:0",
+    "compressOlderThan": "0d",
+    "deleteOlderThan": "180d",
+    "deletionBatchSize": 5000,
+    "passes description": "NOTE: These values are not to be changed without the assistance of support personnel. Defines the activity compression passes to perform. compressOlderThan:  The lower bound for activity data compression for a given pass. Any activity data older than this value will be compressed. If this value is not specified the default is used. aggregationPeriod:  The aggregation period to use in a given pass.",
+    "passes": [
+      { "aggregationPeriod": "1h" },
+      { "aggregationPeriod": "1d" },
+      { "aggregationPeriod": "30d" },
+      {
+        "compressOlderThan": "180d",
+        "aggregationPeriod": "180d"
+      },
+      {
+        "compressOlderThan": "720d",
+        "aggregationPeriod": "360d"
+      }
+    ]
+  },
+  "customHostParameters": {
+    "additionalOperatingSystems": ""
+  },
+  "appSettings": {
+    "SingleDGEService description": "Use single or multiple DGE services. False = at least one per forest.",
+    "SingleDGEService": "true",
+
+    "UseNewExpandGroupMembership description": "Debug old vs new Group Expansion",
+    "UseNewExpandGroupMembership": "true",
+    "RunBothExpandGroupMembership": "false",
+
+    "CollectionIntervalInSeconds description": "The number of seconds between metric collections",
+    "Metrics.CollectionIntervalInSeconds": "60",
+
+    "SidCacheMaximumCacheSize description": "The number of SIDs which can exist in the common SID cache used by both the server and client. Set to zero to disable caching.",
+    "SidCacheMaximumCacheSize": "10000",
+
+    "SidCacheTTLInMinutes description": "The Time To Live in minutes of SIDs within the SID cache used by the server.",
+    "SidCacheTTLInMinutes": "20",
+
+    "MachineLocalGroupCacheTTLInSeconds description": "Configures the Time To Live of entries within the servers access checking machine local group cache. The longer the TTL, the longer it takes for an update to a groups membership to be taken into account for the purposes of resource access checks.",
+    "GroupResolution.MachineLocalGroupCacheTTLInSeconds": "240",
+
+    "AgentLeaseRenewPeriod description description": "Configures the minute interval at which a registered DGE agent will send in a LeaseRenewal message containing agent metrics.",
+    "AgentLeaseRenewPeriod": "30",
+    "IgnoreFiles": "false",
+
+    "VerboseHostForTrusteeLogging description": "The following is debug code to log the complete Alias table that will be used for this query.",
+    "VerboseHostForTrusteeLogging": "false",
+    "RemoteExecutor.WaitResultTimeout": "5",
+    "OracleBulkImportBatchSize": "500",
+
+    "SuggestedAgentCap description": "This is the suggested maximum number of agent instances on a given computer. This is not a hard cap, it is just a suggestion.",
+    "SuggestedAgentCap": "20",
+
+    "PerceivedOwnershipByResourceActivity description": "This key is used to specify whether use the resource activity as the primary source to determind perceived owners. Default value is true.",
+    "PerceivedOwnershipByResourceActivity": "true",
+
+    "PerceivedOwnershipByResourceOwner description": "This key is used to specify whether the resource owner within the target system should be considered as a perceived owner suggestion with the highest weight. Default value is false.",
+    "PerceivedOwnershipByResourceOwner": "false",
+
+    "PerceivedOwnershipMaxReturnValue description": "This key is used to specify the maximun number of perceived owners can be returned. Default value is 5 perceived owners.",
+    "PerceivedOwnershipMaxReturnValue": "5",
+
+    "PerceivedOwnershipCalcUpdatesRefreshIntervalMinutes description": "This key is used to specify the interval between updates of the perceived owner information for resources in the OIM dashboards. Default value is 1440 minutes, or one day.",
+    "PerceivedOwnershipCalcUpdatesRefreshIntervalMinutes": "1440",
+
+    "DisablePerceivedOwnershipUpdate description": "This key is used to disable the perceived ownership update. By disabling this, custom perceived ownership calculations can be created by writing to the QAMPoIPerceivedOwner table directly. Default value is false.",
+    "DisablePerceivedOwnershipUpdate": "false",
+
+    "StaleDuGEntryUpperBound description": "Maximum number of stale DuG entries to be considered for PoI collection in a single run.",
+    "StaleDuGEntryUpperBound": "1000",
+
+    "WeightMultiplier description": "The following set of values define the weights for different activities when inferring the perceived owners of a resource.",
+    "Activity.ReadWeightMultiplier": "150",
+    "Activity.WriteWeightMultiplier": "150",
+    "Activity.CreateWeightMultiplier": "150",
+    "Activity.DeleteWeightMultiplier": "150",
+    "Activity.RenameWeightMultiplier": "125",
+    "Activity.SecurityChangeWeightMultiplier": "200",
+
+    "PerceivedOwnershipActivityPeriod description": "This key is used to specify the time period in days to look for past resource activity to determine perceived owners. Default value is 30 days.",
+    "PerceivedOwnershipActivityPeriod": "30",
+
+    "IncludeSuitabilityTraceInfo description": "This key is used to turn on the suitability trace information property in the results of a self service request. If this value is 'true', the information will be present as a property of the returned objects.",
+    "SelfService.IncludeSuitabilityTraceInfo": "false",
+
+    "MarkSuitabilityVisible description": "This key is used to mark the suitability of the groups returned through a self service request as visible, from it's normally hidden state. If this value is 'true', the suitability integer will be presented in the UI.",
+    "SelfService.MarkSuitabilityVisible": "false",
+
+    "SuitabilityThreshold description": "This key is used to determine what the lowest possible suitability index that can be returned by the self service access request algorithm. Any group whose suitability drops below this threshold will be cut from the list of suitable groups.",
+    "SelfService.SuitabilityThreshold": "100",
+
+    "AllowNonPublishedGroups description": "These values will prevent any groups that are not synchronized by Q1IM and/or not published to Q1IM's IT Shop from showing up in the list of groups that are presented by the self-service web UI.",
+    "SelfService.AllowNonPublishedGroups": "false",
+    "SelfService.AllowUnsynchronizedGroups": "false",
+
+    "MaximumMethodsCount description": "This key is used to configure the maximum number of SelfServiceActionItem that are to be returned.",
+    "SelfService.MaximumMethodsCount": "5",
+
+    "EnableSelfServiceAccessRequest description": "This key is used to enable the SelfService request.",
+    "SelfService.EnableSelfServiceAccessRequest": "true",
+
+    "UseAdminPathsForSharedFolders description": "This key is used to control how the server deals with the security that backs folders. There are two different methods ofgetting and setting folder security when looking at a share path; you can do it with the '\\comp\\share' path and a Folder resource type, or you can get the folder path that backs the share, convert it to an admin share path, and use a folder type.",
+    "FolderSecurity.UseAdminPathsForSharedFolders": "0",
+
+    "ManagedHostDeleteBatchSize description": "The value is used by the methods that delete managed hosts and their associated resource and resource activity from the database. The data is deleted in batches of this size to avoid locking the database for the time it takes to delete it all, thus letting any other database activity complete while all this deleting is going on.",
+    "ManagedHostDeleteBatchSize": "10000",
+
+    "AccessInheritanceSuitabilityProcessor description": "The following set of multipliers are used by the self service calculation system to modify the relative weights of the various calculators. These values allow for the customization of the weight information either on the positive side, or the negative side, of each suitability calculator. Doubling the multipliers will effectively double the weight of the processor. If the permissions have been inherited from some resource higher in the hierarchy, then the requestor may be given access to more resources than they've actually requested (Bad). If we don't gain anything from the inherited access, don't change the suitability (Neutral). If the explicitly held rights are a decent match (better than neutral) and there are no inherited rights,then that's good (Good).",
+    "SelfService.AccessInheritanceSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.AccessInheritanceSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "AccessSuitabilityProcessor.PositiveMultiplier description": "The Access Suitability Processor will check the access granted to a particular group for a resource and determine how appropriate it would be to add the self-service requester to that group, relative to the permissions that were requested. It is optimal if the access held by a group is exactly what the request requires, (very good). It's not as good if the group has more access than is required (good). But it's detrimental if the group has 'dangerous' rights, such as Full Control, Take Ownership, or Change Permissions (very bad). If the group doesn't have sufficient access to meet the request, it is marked as ineligible for selection (ineligible).",
+    "SelfService.AccessSuitabilityProcessor.PositiveMultiplier": "200",
+    "SelfService.AccessSuitabilityProcessor.NegativeMultiplier": "500",
+
+    "DomainLocalMembershipSuitabilityProcessor description": "If a group contains any global or universal groups, then it's likely being used as a resource group. This means that the group should be less desirable for usage as an access provisioning group (Bad). If this group does not contain any global or universal groups then it is most likely used for direct access provisioning and not as a container group (Very Good).",
+    "SelfService.DomainLocalMembershipSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.DomainLocalMembershipSuitabilityProcessor.NegativeMultiplier": "200",
+
+    "GroupMembershipRulesSuitabilityProcessor description": "Ensures that global groups are in the same domain as the user. Ensures that Universal groups are in the same forest as the user. Multiplier values for this processor do nothing since it only marks groups as ineligible or leaves them neutral.",
+    "SelfService.GroupMembershipRulesSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.GroupMembershipRulesSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "GroupTypeSuitabilityProcessor description": "Based on Microsoft best-practices, Global groups are very good, universal groups are good, domain local groups are bad, and domain built-in groups are ineligible. Also (obviously) any non-security groups are inelilgible.",
+    "SelfService.GroupTypeSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.GroupTypeSuitabilityProcessor.NegativeMultiplier": "200",
+
+    "OriginInformationSuitabilityProcessor description": "Weights up groups from the resource's forest as Good and groups from the resource's domain as Very Good.",
+    "SelfService.OriginInformationSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.OriginInformationSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "ResourceDistanceSuitabilityProcessor description": "The Resource Distance Suitability Processor will determine, based on how far removed the group is from the resource based on group membership nesting. The closer a group is to the resource, the better. The further away the group gets from the ACL, the worse the score. This calculator will never mark a group as worse than Bad. Group directly on resource = Very Good Group is one nested group away from the resource = Good etc.",
+    "SelfService.ResourceDistanceSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.ResourceDistanceSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "Start share point description ": "Begin SharePoint Group Suitability Calculator Weightings.",
+
+    "BestFitPermissionLevelSuitabilityProcessor description": "Choose a group assigned a permission level that best fits the requested access. Not enough rights makes the group Ineligible. Granting any modification permissions when only Contribute permissions are requested makes the group ineligible.",
+    "SelfService.BestFitPermissionLevelSuitabilityProcessor.PositiveMultiplier": "300",
+    "SelfService.BestFitPermissionLevelSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "DelegationGrantingPermissionLevelSuitabilityProcessor description": "Groups that contain permission levels that grant a user not only the requested rights, but also give the ability to delegate permissions to others will be marked as ineligible.",
+    "SelfService.DelegationGrantingPermissionLevelSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.DelegationGrantingPermissionLevelSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "FarmAdminAvoidSuitabilityProcessor description": "Avoid groups that grant farm administrative rights, they will be marked as ineligible.",
+    "SelfService.FarmAdminAvoidSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.FarmAdminAvoidSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "JoinOptionsSuitabilityProcessor description": "Perfer SharePoint groups that have self service enabled.",
+    "SelfService.JoinOptionsSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.JoinOptionsSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "PermissionsAgreeSuitabilityProcessor description": "Many Windows groups that may be viable through Windows Domain Trusts do not always work in granting SharePoint access because of limitations in SharePoint security checking. This calculator checks to see if SharePoint itself considers the group valid for the requested access. If the effective permissions meet the requirements of the requested permissions, that's very good. Otherwise, it's bad.",
+    "SelfService.PermissionsAgreeSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.PermissionsAgreeSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "NestingSuitabilityProcessor description": "Prefer AD groups that are nested in SharePoint groups. This is a compromise position in debate of AD Groups vs. SharePoint groups: Keep some SharePoint functionality while being able to use the power of enterprise AD groups.",
+    "SelfService.NestingSuitabilityProcessor.PositiveMultiplier": "200",
+    "SelfService.NestingSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "PreferActiveDirectoryGroupTypeSuitabilityProcessor description": "Group Nesting Preference: Perfer granting via AD groups directly.",
+    "SelfService.PreferActiveDirectoryGroupTypeSuitabilityProcessor.PositiveMultiplier": "50",
+    "SelfService.PreferActiveDirectoryGroupTypeSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "PreferSharePointGroupTypeSuitabilityProcessor description": "Some organizations will prefer to use groups that are SharePoint groups because they enhance SharePoint features and delegation within SharePoint itself, as well as allowing self service. This is a trade-off between SharePoint features vs. AD group power in the enterprise. The use of AD Groups vs. SharePoint groups as a best practice is a debated topic. Those who want to avoid SharePoint groups can flip the positive “weight” to a negative number.",
+    "SelfService.PreferSharePointGroupTypeSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.PreferSharePointGroupTypeSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "SiteCollectionAvoidAdminSuitabilityProcessor description": "Avoid groups that grant Site Collection Administrative rights, they will be marked as ineligible.",
+    "SelfService.SiteCollectionAvoidAdminSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.SiteCollectionAvoidAdminSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "WebAppPolicyAvoidActAsSystemSuitabilityProcessor description": "Avoid groups that would cause the user to gain the Act As System right, they will be marked as ineligible.",
+    "SelfService.WebAppPolicyAvoidActAsSystemSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.WebAppPolicyAvoidActAsSystemSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "WebAppPolicyAvoidSiteCollectionRightsSuitabilityProcessor description": "Avoid groups that web application policies grant Site Collection admin rights to, they will be marked as ineligible.",
+    "SelfService.WebAppPolicyAvoidSiteCollectionRightsSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.WebAppPolicyAvoidSiteCollectionRightsSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "WebAppPolicyDenySuitabilityProcessor description": "Some Farms may have policies denying most users from ever getting permissions that are too high. This is not a bad thing. Any rights denied outside the requested permission make the group Neutral. A policy can make the group ineligible if it denies rights being requested.",
+    "SelfService.WebAppPolicyDenySuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.WebAppPolicyDenySuitabilityProcessor.NegativeMultiplier": "100",
+
+    "WebAppPolicyGrantSuitabilityProcessor.PositiveMultiplier description": "Avoid groups that get rights granted via a Web Application Policy (in any zone). The more rights granted, the worse it is. These policies are usually used to grant service accounts like the Search Service accounts rights, and are not generally good ways to get access to things. These groups will be marked as ineligible.",
+    "SelfService.WebAppPolicyGrantSuitabilityProcessor.PositiveMultiplier": "100",
+    "SelfService.WebAppPolicyGrantSuitabilityProcessor.NegativeMultiplier": "100",
+
+    "End share point description ": "End of SharePoint Best Fit Calculator weightings.",
+
+    "SyncDomainInterval description": "Synch domain password change check interval in seconds.",
+    "SyncDomainInterval": "60",
+
+    " POI Collection config values description": " POI Collection config values.",
+
+    "CheckFrequencyInMinutes description": "The number of minutes the server will wait between checks to see if any DUG resources require security collection. ",
+    "CollectPoi.CheckFrequencyInMinutes": "10",
+
+    "OverdueThresholdInMinutes description": "How old the POI collection timestamp on a DuG entry has to be before it is re-considered for POI collection. This value is only used for automatically-triggered collections.",
+    "CollectPoi.OverdueThresholdInMinutes": "1440",
+
+    "QueryTimeoutInMinutes description": "The time to wait before the expectation of a result for a POI query is abandoned. Defaults to 4 hours.",
+    "CollectPoi.QueryTimeoutInMinutes": "360",
+
+    "MaxConcurrentQueries description": "The maximum number of collect POI queries that will be outstanding (i.e. waiting for a response or waiting for DB processing) at once. Defaults to 5. Min value = 1, max value = 50.",
+    "CollectPoi.MaxConcurrentQueries": "5",
+
+    "QueryBatchSize description": "The maximum number of resources sent in a single query to an agent.",
+    "CollectPoi.QueryBatchSize": "5000",
+
+    "IncludeDeviations description": "Whether or not to collect information for objects whose security deviates from their parent's. ",
+    "CollectPoi.IncludeDeviations": "false",
+
+    "QueryUpperBound description": "An upper bound on the number of resources that will be held in memory at once for POI query processing.",
+    "CollectPoi.QueryUpperBound": "1000000",
+
+    "IgnoreChangedResourceSynchronization description": "Check the configuration settings to see whether the changed resource synchronization should be ignored.",
+    "CollectPoi.IgnoreChangedResourceSynchronization": "false",
+
+    "DFSDataSyncInterval description": "Gets a value indicating the preferred frequency at which the implementer should have it's DoUpdates method called.",
+    "DFSDataSyncInterval": "1440",
+
+    "EMCIsilonDFSLinksEnabled description": "Enable ability to resolve DFS Links to EMC Isilon CIFS Devices.",
+    "EMCIsilonDFSLinksEnabled": "false",
+
+    "EMCIsilonUseNetworkPathForAccessRequests description": "Enable ability to read access groups and their associated permissions directly from network share for resource access requests for DFS links.",
+    "EMCIsilonUseNetworkPathForAccessRequests": "false",
+
+    "RemoteHostForCloudOnlyImplementation description": "Enable ability to load only a single Windows Server from Active Directory for a cloud host only implementation. Enter the DNS Host name of the Windows server to be used for hosting the remote agent for cloud host.",
+    "RemoteHostForCloudOnlyImplementation": "",
+
+    "DirectAccessForServiceCredentials description": "Enable ability to access service account credentials directly from database during agent deployment.",
+    "DirectAccessForServiceCredentials": "true",
+
+    "MessagingCacheFolder description": "The directory in which the server's message store should exist.",
+    "MessagingCacheFolder": ".\\ServerMessagingCache",
+
+    "RestServicePort description": "This value is not to be edited manually. It is the http port that DGE REST services use. Its value should always be 1 greater than QAM port [Default 8722].",
+    "RestServicePort": "8723",
+
+    "MinimumSupportedModuleMigrationVersion description": "Minimum version of the D1IM Database that this version of the DGE server can work with.",
+    "MinimumSupportedModuleMigrationVersion": "2014.0006.0025.0000",
+
+    "InstallDir description": "Custom initial service deployment path on the DGE service machine.",
+    "InstallDir": ""
+
+  },
+  "connectionStrings": {
+    "ConnectionString description": "Performance Metrics DB connection string. By default it is embedded in the code. If database file is relocated then enable this connection string to point to new location.",
+    "PerformanceMetricsDBConnectionString": "metadata=res://*/Model.PerformanceMetricsModel.csdl|res://*/Model.PerformanceMetricsModel.ssdl|res://*/Model.PerformanceMetricsModel.msl;provider=System.Data.SqlClient;provider connection string=\"data source=localhost;initial catalog=PerformanceMetrics;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework\""
+  }
+}

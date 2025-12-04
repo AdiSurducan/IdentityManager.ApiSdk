@@ -1,0 +1,15 @@
+<Include>
+
+    <!-- Powershell Registration -->
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns" Value="" Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Value="" Type="string" Action="write" />
+
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="ApplicationBase" Value="[APPLICATIONFOLDER]" Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="AssemblyName" Value="QAM.Client.PowerShell, Version=3.0.0.0, Culture=neutral, PublicKeyToken=982ac2682a29711a" Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="Description" Value="Data Governance Cmdlets" Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="ModuleName" Value="[#QAM.Client.PowerShell.QAM.Client.PowerShell.dll]" Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="PowerShellVersion" Value="1.0" Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="Vendor" Value="One Identity LLC." Type="string" Action="write" />
+    <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\OneIdentity.DataGovernance" Name ="Version" Value="3.0.0.0" Type="string" Action="write" />
+
+</Include>

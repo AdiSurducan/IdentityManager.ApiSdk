@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Plugins>
+  <Plugin Type="QAM.Common.Permissions.NTFSFolderPermissionsProcessor" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>NTFS\Folder</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Permissions.NTFSFilePermissionsProcessor" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>NTFS\File</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Permissions.NTFSPermissionsProcessor" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>NTFS</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Permissions.SharePermissionsProcessor" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>Windows Computer\Share</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Permissions.LocalUserRightsPermissionsProcessor" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>Windows Computer\Local User Rights</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Permissions.AdminRightsPermissionsProcessor" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>Windows Computer\Operating System Administrative Rights</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.SharePointItemPermissionsCracker" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>SharePoint\ResourceItem</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.SharePointSCAdminPermissionsCracker" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>SharePoint\SiteCollectionAdminRight</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.SharePointWebAppPolicyPermissionsCracker" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>SharePoint\WebAppPolicy</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.SharePointFarmAdminPermissionsCracker" Assembly="QAM.Common.SharedCore.N8.dll">
+    <Property>SharePoint\FarmAdminRight</Property>
+  </Plugin>
+</Plugins>

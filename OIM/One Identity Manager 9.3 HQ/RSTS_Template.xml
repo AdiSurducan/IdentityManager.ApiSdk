@@ -1,0 +1,162 @@
+﻿<!DOCTYPE ObjectContainer>
+<Container>
+   <BaseObject><Key>
+  <Table Name="QBMIdentityProvider" Display="http://localhost/rsts/login" Key="CCC-54D593E4B64D7F48868A9750EAFD3149">
+    <Prop Name="UID_QBMIdentityProvider">
+      <Value>CCC-54D593E4B64D7F48868A9750EAFD3149</Value>
+    </Prop>
+  </Table>
+</Key></BaseObject>
+   <DeleteResiduals>true</DeleteResiduals>
+   <Relations />
+   <DbObjects>
+      <DbObject Display="http://localhost/rsts/login" Version="2">
+         <Key>
+            <Table Name="QBMIdentityProvider" Display="http://localhost/rsts/login" Key="CCC-54D593E4B64D7F48868A9750EAFD3149">
+               <Prop Name="UID_QBMIdentityProvider">
+                  <Value>CCC-54D593E4B64D7F48868A9750EAFD3149</Value>
+               </Prop>
+            </Table>
+         </Key>
+         <Columns>
+            <Column Name="AcrValues">
+               <Value />
+            </Column>
+            <Column Name="AllowSelfSignedCertsForTLS" Display="True">
+               <Value>True</Value>
+            </Column>
+            <Column Name="CertificateEndpoint" Display="https://localhost/RSTS/SigningCertificate">
+               <Value>https://localhost/RSTS/SigningCertificate</Value>
+            </Column>
+            <Column Name="CertificateSubject" Display="[Distinguished name of the certificate subject]">
+               <Value>[Distinguished name of the certificate subject]</Value>
+            </Column>
+            <Column Name="CertificateText" Display="[Base64 encoded certificate data]">
+               <Value>[Base64 encoded certificate data]</Value>
+            </Column>
+            <Column Name="CertificateThumbPrint" Display="[Hex thumbprint of the certificate used for checking]">
+               <Value>[Hex thumbprint of the certificate used for checking]</Value>
+            </Column>
+            <Column Name="CheckClaim">
+               <Value />
+            </Column>
+            <Column Name="CheckValue">
+               <Value />
+            </Column>
+            <Column Name="Description">
+               <Value />
+            </Column>
+            <Column Name="DisplayName" Display="http://localhost/rsts/login">
+               <Value>http://localhost/rsts/login</Value>
+            </Column>
+            <Column Name="IssuerName" Display="urn:RSTS/identity">
+               <Value>urn:RSTS/identity</Value>
+            </Column>
+            <Column Name="JsonWebKeyEndpoint">
+               <Value />
+            </Column>
+            <Column Name="LoginEndpoint" Display="http://localhost/rsts/login">
+               <Value>http://localhost/rsts/login</Value>
+            </Column>
+            <Column Name="LogoutEndpoint" Display="http://localhost/rsts/login?wa=wsignout1.0">
+               <Value>http://localhost/rsts/login?wa=wsignout1.0</Value>
+            </Column>
+            <Column Name="NoIdTokenCheck" Display="False">
+               <Value>False</Value>
+            </Column>
+            <Column Name="Scope" Display="openid profile">
+               <Value>openid profile</Value>
+            </Column>
+            <Column Name="SearchClaim" Display="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier">
+               <Value>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier</Value>
+            </Column>
+            <Column Name="SharedSecret" Display="[Shared secret]">
+               <Value>[Shared secret]</Value>
+            </Column>
+            <Column Name="TokenEndpoint" Display="https://localhost/rsts/oauth2/token">
+               <Value>https://localhost/rsts/oauth2/token</Value>
+            </Column>
+            <Column Name="UID_QBMIdentityProvider" Display="CCC-54D593E4B64D7F48868A9750EAFD3149">
+               <Value>CCC-54D593E4B64D7F48868A9750EAFD3149</Value>
+            </Column>
+          <Column Name="UID_SearchColumn" Display="Person - DefaultEmailAddress">
+               <Key>
+                  <Table Name="DialogColumn" Display="Person - DefaultEmailAddress" Key="QER-1B2563F0BE044E20B56FEB7E7692BEFA">
+                     <Prop Name="UID_DialogColumn">
+                        <Value>QER-1B2563F0BE044E20B56FEB7E7692BEFA</Value>
+                     </Prop>
+                  </Table>
+               </Key>
+            </Column>
+            <Column Name="UserInfoEndpoint">
+               <Value />
+            </Column>
+            <Column Name="UserNameClaim" Display="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn">
+               <Value>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn</Value>
+            </Column>
+         </Columns>
+      </DbObject>
+      <DbObject Display="RSTS Client" Version="2">
+         <Key>
+            <Table Name="QBMIdentityClient" Display="RSTS Client" Key="CCC-859BE1D008E978008EED64DD7E5C4BA7">
+               <Prop Name="UID_QBMIdentityClient">
+                  <Value>CCC-859BE1D008E978008EED64DD7E5C4BA7</Value>
+               </Prop>
+            </Table>
+         </Key>
+         <Columns>
+            <Column Name="CertificateEndpoint">
+               <Value />
+            </Column>
+            <Column Name="CertificateSubject">
+               <Value />
+            </Column>
+            <Column Name="CertificateText">
+               <Value />
+            </Column>
+            <Column Name="CertificateThumbPrint">
+               <Value />
+            </Column>
+            <Column Name="ClientID">
+               <Value>f1065560-8823-4d3b-ab86-72d342161001</Value>
+            </Column>
+            <Column Name="Description" Display="">
+               <Value></Value>
+            </Column>
+            <Column Name="DisplayName" Display="RSTS Client">
+               <Value>RSTS Client</Value>
+            </Column>
+            <Column Name="IsDefault" Display="False">
+               <Value>False</Value>
+            </Column>
+            <Column Name="RedirectUri" Display="urn:InstalledApplication">
+               <Value>urn:InstalledApplication</Value>
+            </Column>
+            <Column Name="Resource">
+               <Value />
+            </Column>
+            <Column Name="SharedSecret">
+                <Value>[SharedSecret]</Value>
+            </Column>
+            <Column Name="TokenEndpointAuthentication" Display="client_secret_basic">
+               <Value>client_secret_basic</Value>
+            </Column>
+            <Column Name="TokenEndpointCertThumbPrint">
+               <Value />
+            </Column>
+            <Column Name="UID_QBMIdentityClient" Display="CCC-859BE1D008E978008EED64DD7E5C4BA7">
+               <Value>CCC-859BE1D008E978008EED64DD7E5C4BA7</Value>
+            </Column>
+            <Column Name="UID_QBMIdentityProvider" Display="http://localhost/rsts/login">
+               <Key>
+                  <Table Name="QBMIdentityProvider" Display="http://localhost/rsts/login" Key="CCC-BE14D1DD9D810118E835934FF09AB396">
+                     <Prop Name="UID_QBMIdentityProvider">
+                        <Value>CCC-54D593E4B64D7F48868A9750EAFD3149</Value>
+                     </Prop>
+                  </Table>
+               </Key>
+            </Column>
+         </Columns>
+      </DbObject>
+   </DbObjects>
+</Container>

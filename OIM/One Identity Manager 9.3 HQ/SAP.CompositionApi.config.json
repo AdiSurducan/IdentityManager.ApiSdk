@@ -1,0 +1,37 @@
+{
+  "AppliesTo": "portal",
+  "Data": {
+    "ServerConfig/OwnershipConfig/EditableFields/SAPGrp": [
+      "CanonicalName",
+      "DistinguishedName",
+      "DisplayName",
+      "UID_SAPMandant",
+      "Description",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/SAPRole": [
+      "CanonicalName",
+      "DistinguishedName",
+      "DisplayName",
+      "UID_SAPMandant",
+      "Description",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex"
+    ],
+    "ServerConfig/OwnershipConfig/EditableFields/SAPProfile": [
+      "CanonicalName",
+      "DisplayName",
+      "UID_SAPMandant",
+      "Description",
+      "IsForITShop",
+      "IsITShopOnly",
+      "MatchPatternForMembership",
+      "RiskIndex"
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SqlChecks>
+	<SqlCheck Name="TableRightsCheck">
+		<Query>
+		<MSSQL>
+			select c.TableName, g.GroupName
+			, convert(bit, sign(max(convert(int, cr.CanSee)) + max(convert(int, cr.CanEdit)) + max(convert(int, cr.CanInsert)))) as CanSee
+			, convert(bit, sign(max(convert(int, cr.CanEdit)))) as CanEdit
+			, convert(bit, sign(max(convert(int, cr.CanInsert)))) as CanInsert
+			from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+			join dialoggroup g on cr.uid_dialoggroup=g.uid_dialoggroup
+			group by c.tablename, cr.uid_dialoggroup, g.groupname
+			having not exists (select 1 from dialogtablegroupright tr
+			where tr.tablename = c.tablename
+			and tr.uid_dialoggroup = cr.uid_dialoggroup
+			)
+			order by 3,1
+		</MSSQL>
+		<ORACLE>
+			select c.TableName, g.GroupName
+			, sign(max(cr.CanSee) + max(cr.CanEdit) + max(cr.CanInsert)) as CanSee
+			, sign(max(cr.CanEdit)) as CanEdit
+			, sign(max(cr.CanInsert)) as CanInsert
+			from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+			join dialoggroup g on cr.uid_dialoggroup=g.uid_dialoggroup
+			group by c.tablename, cr.uid_dialoggroup, g.groupname
+			having not exists (select 1 from dialogtablegroupright tr
+			where tr.tablename = c.tablename
+			and tr.uid_dialoggroup = cr.uid_dialoggroup
+			)
+			order by 3,1
+		</ORACLE>
+		</Query>
+	</SqlCheck>
+	
+	<SqlCheck Name="CanSeeRightsCheck">
+		<Query>
+			<MSSQL>
+				select g.GroupName , tr.TableName, X.CanSee as "ColumnRight CanSee", tr.CanSee as "TableRight CanSee"
+				from dialogtableGroupright tr join  (select c.tablename, cr.uid_dialoggroup
+				, convert(bit, sign(max(convert(int, cr.CanSee)) + max(convert(int, cr.CanEdit)) + max(convert(int, cr.CanInsert)) )) as CanSee
+				from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+				group by c.tablename, cr.uid_dialoggroup
+				) as x on x.tablename = tr.tablename
+				and x.uid_dialogGroup = tr.uid_dialogGroup
+				and x.CanSee = 1
+				and tr.CanSee = 0
+				join dialoggroup g on tr.uid_dialoggroup=g.uid_dialoggroup
+				order by 1, 2
+			</MSSQL>
+			<ORACLE>
+				select g.GroupName , tr.TableName, X.CanSee as "ColumnRight CanSee", tr.CanSee as "TableRight CanSee"
+				from dialogtableGroupright tr join  
+				(select c.tablename, cr.uid_dialoggroup
+				, sign(max(cr.CanSee) + max(cr.CanEdit) + max(cr.CanInsert)) as CanSee
+				from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+				group by c.tablename, cr.uid_dialoggroup
+				) x on x.tablename = tr.tablename
+				and x.uid_dialogGroup = tr.uid_dialogGroup
+				and x.CanSee = 1
+				and tr.CanSee = 0
+				join dialoggroup g on tr.uid_dialoggroup=g.uid_dialoggroup
+				order by 1, 2			
+			</ORACLE>
+		</Query>
+	</SqlCheck>
+
+	<SqlCheck Name="CanEditRightsCheck">
+		<Query>
+			<MSSQL>
+				select g.GroupName , tr.TableName, X.CanEdit as "ColumnRight CanEdit", tr.CanEdit as "TableRight CanEdit"
+				from dialogtableGroupright tr join  (select c.tablename, cr.uid_dialoggroup
+				, convert(bit, sign(max(convert(int, cr.CanEdit)))) as CanEdit
+				from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+				group by c.tablename, cr.uid_dialoggroup
+				) as x on x.tablename = tr.tablename
+				and x.uid_dialogGroup = tr.uid_dialogGroup
+				and x.CanEdit = 1
+				and tr.CanEdit = 0
+				join dialoggroup g on tr.uid_dialoggroup=g.uid_dialoggroup
+				order by 1,2
+			</MSSQL>
+			<ORACLE>
+				select g.GroupName , tr.TableName, X.CanEdit as "ColumnRight CanEdit", tr.CanEdit as "TableRight CanEdit"
+				from dialogtableGroupright tr join  (select c.tablename, cr.uid_dialoggroup
+				, sign(max(cr.CanEdit)) as CanEdit
+				from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+				group by c.tablename, cr.uid_dialoggroup
+				) x on x.tablename = tr.tablename
+				and x.uid_dialogGroup = tr.uid_dialogGroup
+				and x.CanEdit = 1
+				and tr.CanEdit = 0
+				join dialoggroup g on tr.uid_dialoggroup=g.uid_dialoggroup
+				order by 1,2
+			</ORACLE>
+		</Query>
+	</SqlCheck>
+
+	<SqlCheck Name="CanInsertRightsCheck">
+		<Query>
+			<MSSQL>
+				select g.GroupName , tr.TableName, X.CanInsert as "ColumnRight CanInsert", tr.CanInsert as "TableRight CanInsert"
+				from dialogtableGroupright tr join  (select c.tablename, cr.uid_dialoggroup
+				, convert(bit, sign(max(convert(int, cr.CanInsert)))) as CanInsert
+				from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+				group by c.tablename, cr.uid_dialoggroup
+				) as x on x.tablename = tr.tablename
+				and x.uid_dialogGroup = tr.uid_dialogGroup
+				and x.CanInsert = 1
+				and tr.CanInsert = 0
+				join dialoggroup g on tr.uid_dialoggroup=g.uid_dialoggroup
+				order by 1,2
+			</MSSQL>
+			<ORACLE>
+				select g.GroupName , tr.TableName, X.CanInsert as "ColumnRight CanInsert", tr.CanInsert as "TableRight CanInsert"
+				from dialogtableGroupright tr join  (select c.tablename, cr.uid_dialoggroup
+				,sign(max(cr.CanInsert)) as CanInsert
+				from dialogcolumngroupright cr join dialogcolumn c on cr.uid_dialogcolumn = c.uid_dialogcolumn
+				group by c.tablename, cr.uid_dialoggroup
+				) x on x.tablename = tr.tablename
+				and x.uid_dialogGroup = tr.uid_dialogGroup
+				and x.CanInsert = 1
+				and tr.CanInsert = 0
+				join dialoggroup g on tr.uid_dialoggroup=g.uid_dialoggroup
+				order by 1,2
+			</ORACLE>
+		</Query>
+	</SqlCheck>
+
+	<SqlCheck Name="SchemaConsistencyCheck">
+		<Condition></Condition>
+		<Query>
+			<MSSQL>
+				select
+					c.TableName,
+					c.ColumnName,
+					isnull(sc.TABLE_NAME, 'missing in schema') as TableName_Schema,
+					isnull(sc.COLUMN_NAME, 'missing in schema') as ColumnName_Schema
+				from DialogColumn c
+				left outer join information_schema.columns sc
+				on c.TableName = sc.TABLE_NAME and c.ColumnName = sc.COLUMN_NAME
+				where	isnull(sc.TABLE_NAME, '') = ''
+			</MSSQL>
+			<ORACLE>
+				select c.TableName, 
+					c.ColumnName,
+					nvl(sc.TABLE_NAME, 'missing in schema') as TableName_Schema,
+					nvl(sc.COLUMN_NAME, 'missing in schema') as ColumnName_Schema
+				from DialogColumn c
+				left outer join user_tab_columns sc
+				on upper(c.TableName) = sc.TABLE_NAME and upper(c.ColumnName) = sc.COLUMN_NAME
+				where	sc.TABLE_NAME is null
+			</ORACLE>
+		</Query>
+	</SqlCheck>
+
+	<SqlCheck Name="JobIgnoreErrorsCheck">
+		<Condition></Condition>
+		<Query>
+			<MSSQL>
+				select c.name as JobChain, j.name as Job from Job j
+				left outer join JobChain c on j.UID_JobChain = c.UID_jobChain
+				where j.IgnoreErrors = 1 and ISNULL(j.UID_ErrorJob, '') &lt;&gt; ''
+			</MSSQL>
+			<ORACLE>
+				select c.name as JobChain, j.name as Job from Job j
+				left outer join JobChain c on j.UID_JobChain = c.UID_jobChain
+				where j.IgnoreErrors = 1 and not j.UID_ErrorJob is null
+			</ORACLE>
+		</Query>
+	</SqlCheck>
+
+    <SqlCheck Name="ReactivateJobs">
+        <Query>
+            <MSSQL>
+                select distinct y.jobchainname from
+                (
+                select x.JobToStart, j.Name Jobnames, x.jobchainname, x.UID_JobChain
+                from Job j
+                join ( select jc.uid_jobchain, jc.Name jobchainname, j.Name jobname, jrp.ValueTemplate, SUBSTRING(jrp.ValueTemplate, charindex('"', jrp.ValueTemplate) + 1, LEN(jrp.ValueTemplate) - LEN('value =') - 3) JobToStart from JobChain jc join Job j on j.UID_JobChain = jc.UID_JobChain
+                join JobRunParameter jrp on jrp.UID_Job = j.UID_Job and jrp.Name = 'DestinationJobName'
+                join JobTask jt on jt.UID_JobTask = j.UID_JobTask
+                join JobComponent jcmp on jcmp.UID_JobComponent = jt.UID_JobComponent
+                and jcmp.componentClass = 'VI.JobService.JobComponents.DelayComponent'
+                and jt.TaskName = 'ReActivateJob'
+                ) x on x.UID_JobChain = j.UID_JobChain ) y
+                where y.JobToStart not in (
+                select j.Name Jobnames from Job j
+                join ( select jc.uid_jobchain, jc.Name jobchainname, j.Name jobname, jrp.ValueTemplate, SUBSTRING(jrp.ValueTemplate, charindex('"', jrp.ValueTemplate) + 1, LEN(jrp.ValueTemplate) - LEN('value =') - 3) JobToStart from JobChain jc join Job j on j.UID_JobChain = jc.UID_JobChain
+                join JobRunParameter jrp on jrp.UID_Job = j.UID_Job and jrp.Name = 'DestinationJobName'
+                join JobTask jt on jt.UID_JobTask = j.UID_JobTask join JobComponent jcmp on jcmp.UID_JobComponent = jt.UID_JobComponent and jcmp.componentClass = 'VI.JobService.JobComponents.DelayComponent'
+                and jt.TaskName = 'ReActivateJob'
+                ) x on x.UID_JobChain = j.UID_JobChain
+                and x.UID_JobChain = y.UID_JobChain
+                )
+            </MSSQL>
+            <ORACLE>
+                select distinct y.jobchainname from
+                (
+                select x.JobToStart, j.Name Jobnames, x.jobchainname, x.UID_JobChain
+                from Job j
+                join ( select jc.uid_jobchain, jc.Name jobchainname, j.Name jobname, jrp.ValueTemplate, SUBSTRING(jrp.ValueTemplate, instr(jrp.ValueTemplate, '"') + 1, LEN(jrp.ValueTemplate) - LEN('value =') - 3) JobToStart from JobChain jc join Job j on j.UID_JobChain = jc.UID_JobChain
+                join JobRunParameter jrp on jrp.UID_Job = j.UID_Job and jrp.Name = 'DestinationJobName'
+                join JobTask jt on jt.UID_JobTask = j.UID_JobTask
+                join JobComponent jcmp on jcmp.UID_JobComponent = jt.UID_JobComponent
+                and jcmp.componentClass = 'VI.JobService.JobComponents.DelayComponent'
+                and jt.TaskName = 'ReActivateJob'
+                ) x on x.UID_JobChain = j.UID_JobChain ) y
+                where y.JobToStart not in (
+                select j.Name Jobnames from Job j
+                join ( select jc.uid_jobchain, jc.Name jobchainname, j.Name jobname, jrp.ValueTemplate, SUBSTRING(jrp.ValueTemplate, instr(jrp.ValueTemplate, '"') + 1, LEN(jrp.ValueTemplate) - LEN('value =') - 3) JobToStart from JobChain jc join Job j on j.UID_JobChain = jc.UID_JobChain
+                join JobRunParameter jrp on jrp.UID_Job = j.UID_Job and jrp.Name = 'DestinationJobName'
+                join JobTask jt on jt.UID_JobTask = j.UID_JobTask join JobComponent jcmp on jcmp.UID_JobComponent = jt.UID_JobComponent and jcmp.componentClass = 'VI.JobService.JobComponents.DelayComponent'
+                and jt.TaskName = 'ReActivateJob'
+                ) x on x.UID_JobChain = j.UID_JobChain
+                where x.UID_JobChain = y.UID_JobChain
+                )
+            </ORACLE>
+        </Query>
+    </SqlCheck>
+</SqlChecks>

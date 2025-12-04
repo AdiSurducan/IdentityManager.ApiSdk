@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Analyses>
+	<Analyse>
+		<Display>
+			<english>Active Directory Identity Permissions</english>
+			<deutsch>Active Directory Berechtigungen der Identitäten</deutsch>
+
+		</Display>
+		<Description>
+			<english>Analysis of identity permissions on Active Directory group memberships.</english>
+			<deutsch>Analyse der Berechtigungen von Identitäten auf Active Directory Gruppenmitgliedschaften.</deutsch>
+
+		</Description>
+		<Condition Type="Preprocessor">ADS</Condition>
+		<ObjectRelation>
+			<ID>ADS_764</ID>
+			<ObjectCondition></ObjectCondition>
+			<PropertyCondition></PropertyCondition>
+			<RelationCondition>
+				not exists (select 1 from Adsaccount a
+				where a.uid_adsaccount = ADSAccountInADSGroup.uid_adsaccount
+				and coalesce(a.UID_ADSGroupPrimary, N'') = ADSAccountInADSGroup.uid_adsgroup )
+			</RelationCondition>
+		</ObjectRelation>
+		<PersonRelation>
+			<ID>ADS_767</ID>
+			<Condition></Condition>
+		</PersonRelation>
+	</Analyse>
+	<Analyse>
+		<Display>
+			<english>Active Directory Identity Permissions and Departments</english>
+			<deutsch>Active Directory Berechtigungen und Abteilungen der Identitäten</deutsch>
+		</Display>
+		<Description>
+			<english>Analysis of identity permissions on Active Directory group memberships and the identities department.</english>
+			<deutsch>Analyse der Berechtigungen von Identitäten auf Active Directory Gruppenmitgliedschaften und der Abteilungszugehörigkeit.</deutsch>
+		</Description>
+		<Condition Type="Preprocessor">ADS</Condition>
+		<ObjectRelation>
+			<ID>ADS_764</ID>
+			<ObjectCondition></ObjectCondition>
+			<PropertyCondition></PropertyCondition>
+			<RelationCondition>
+				not exists (select 1 from Adsaccount a
+				where a.uid_adsaccount = ADSAccountInADSGroup.uid_adsaccount
+				and coalesce(a.UID_ADSGroupPrimary, N'') = ADSAccountInADSGroup.uid_adsgroup )
+			</RelationCondition>
+		</ObjectRelation>
+		<PersonRelation>
+			<ID>ADS_767</ID>
+			<Condition></Condition>
+		</PersonRelation>
+
+		<AnalyseRelation Type="ForeignKey">
+			<ID>QER_432</ID>
+			<Condition></Condition>
+		</AnalyseRelation>
+	</Analyse>
+
+	<Analyse>
+		<Display>
+			<english>LDAP Identity Permissions</english>
+			<deutsch>LDAP Berechtigungen der Identitäten</deutsch>
+
+		</Display>
+		<Description>
+			<english>Analysis of identity permissions on LDAP group memberships.</english>
+			<deutsch>Analyse der Berechtigungen von Identitäten auf LDAP Gruppenmitgliedschaften.</deutsch>
+
+		</Description>
+		<Condition Type="Preprocessor">LDAP</Condition>
+		<ObjectRelation>
+			<ID>LDP_1322</ID>
+			<ObjectCondition></ObjectCondition>
+			<PropertyCondition></PropertyCondition>
+			<RelationCondition></RelationCondition>
+		</ObjectRelation>
+		<PersonRelation>
+			<ID>LDP_1338</ID>
+			<Condition></Condition>
+		</PersonRelation>
+	</Analyse>
+</Analyses>

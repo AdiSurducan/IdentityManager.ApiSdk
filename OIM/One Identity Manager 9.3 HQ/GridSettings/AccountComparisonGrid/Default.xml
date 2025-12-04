@@ -1,0 +1,90 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Columns" iskey="true" value="14">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Width">70</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">colDiffType</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">colHostName</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Width">300</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">colResourcePath</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Name">colSourceRight</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Name">colManagedHostId</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Name">colTargetRight</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Name">colResourceType</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Name">colSourceAccess</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Name">colResourceDisplayName</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Name">colResourceDescription</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Name">colTargetAccess</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Width">300</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Name">colRight</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Width">204</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Name">colVia</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Width">150</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Name">colIsPointOfInterestDisplay</property>
+    </property>
+  </property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ShowHorizontalLines">False</property>
+    <property name="ShowVerticalLines">False</property>
+    <property name="EnableAppearanceOddRow">true</property>
+    <property name="EnableAppearanceEvenRow">true</property>
+    <property name="ShowIndicator">false</property>
+    <property name="ShowAutoFilterRow">true</property>
+    <property name="ColumnAutoWidth">false</property>
+  </property>
+  <property name="SortInfo">~Xtra#Base64AAEAAAD/////AQAAAAAAAAAMAgAAAF5EZXZFeHByZXNzLlh0cmFHcmlkLnYxMC4yLCBWZXJzaW9uPTEwLjIuMTEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhBQEAAAA4RGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mb0NvbGxlY3Rpb24EAAAACmdyb3VwQ291bnQFY2xvbmUPY2xvbmVHcm91cENvdW50E0NvbGxlY3Rpb25CYXNlK2xpc3QAAwADCLMBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tEZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvLCBEZXZFeHByZXNzLlh0cmFHcmlkLnYxMC4yLCBWZXJzaW9uPTEwLjIuMTEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhXV0IHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QCAAAAAgAAAAkDAAAAAAAAAAkEAAAABAMAAACzAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mbywgRGV2RXhwcmVzcy5YdHJhR3JpZC52MTAuMiwgVmVyc2lvbj0xMC4yLjExLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAAAwRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mb1tdAgAAAAgICQUAAAAAAAAAAAAAAAQEAAAAHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgUAAAgICQYAAAACAAAAKAAAAAcFAAAAAAEAAAAAAAAABC5EZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvAgAAABAGAAAABAAAAAkHAAAACQgAAAANAgwJAAAAGURldkV4cHJlc3MuWHRyYUdyaWQudjEwLjIFBwAAAC5EZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvAgAAAAlTb3J0T3JkZXIKQ29sdW1uTmFtZQABCAkAAAABAAAABgoAAAALY29sRGlmZlR5cGUBCAAAAAcAAAABAAAABgsAAAALY29sSG9zdE5hbWUL</property>
+  <property name="ActiveFilterString" />
+  <property name="GroupSummarySortInfoState" />
+</XtraSerializer>

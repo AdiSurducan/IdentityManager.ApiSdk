@@ -1,0 +1,9 @@
+Temporary Files:tmp;temp
+Explorer Metadata Files:db;ini
+Executable Files:exe;dll
+Log Files:log;wlg;dmp
+Virtual Machine Files:vmdk;vmem;vmsn;vmsd;nvram;vmx;vhd;vud;vmc;vsv;vfd;vnc;vdk
+Database Files:lck;ldb
+Disc Image Files:dmg;iso;toast;vcd;bac;bup;gho;old;ori
+Email Files:pst;ost;edb;stm;msg;email
+Shortcut Files:lnk

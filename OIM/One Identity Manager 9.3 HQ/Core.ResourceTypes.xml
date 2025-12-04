@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Plugins>
+  <Plugin Type="QAM.Common.Shared.NTFSResourceTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>NTFS</Property>
+    <Property>DFS\Link</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.SharepointResourceTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>SharePoint</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.ShareResourceTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>Windows Computer\Share</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.OSAdminOrLocalUserRightTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>Windows Computer\Local User Rights</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.OSAdminOrLocalUserRightTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>Windows Computer\Operating System Administrative Rights</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.ServiceAccountTypeMetaData" Assembly="QAM.Common.SharedCore.dll">
+    <Property>Service Identities\Windows Service Identity</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.NFSResourceTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>NFS</Property>
+  </Plugin>
+  <Plugin Type="QAM.Common.Shared.CloudResourceTypeMetadata" Assembly="QAM.Common.SharedCore.dll">
+    <Property>Cloud</Property>
+  </Plugin>
+</Plugins>
