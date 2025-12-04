@@ -13,24 +13,18 @@ namespace Api
     {
         public void Build(IApiBuilder builder)
         {
-            builder.ModifyQueryMethod(​
-            "portal/itshop/requests",​
-             method =>​
-            {​
-                method.WithCalculatedProperties(new CalculatedPropertyBulk<string>(​
-                    "RequestAge"​
-                    
-                    context =>
-                    {
-                        context.Entity.GetValue("")
-                    }
-                )​
-            }​
+            builder.ModifyQueryMethod(​"portal/itshop/requests", method => { 
+            
+                method.WithCalculatedProperties()
+            
+            }
+
             );​
+
 ​
         
 
-}
+        }
 
     }
 }
