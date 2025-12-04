@@ -1,0 +1,24 @@
+meta {
+  name: freestyleEx2
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{baseUrl}}/portal/freestyleEx2
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "FirstName": "Lionel",
+    "LastName":"Messi",
+    "Remarks":"API Development Training"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

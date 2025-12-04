@@ -1,0 +1,23 @@
+meta {
+  name: freestyleEx4
+  type: http
+  seq: 17
+}
+
+put {
+  url: {{baseUrl}}/portal/freestyleEx4
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "UID_Person":"04e6d520-6d06-4889-948c-8c148fce5e20",
+    "NewName": "Ronaldo"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
