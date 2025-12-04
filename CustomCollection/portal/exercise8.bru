@@ -1,0 +1,20 @@
+meta {
+  name: exercise8
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/portal/exercise8?email=Irene.Adams@icc-demo.corp
+  body: none
+  auth: inherit
+}
+
+params:query {
+  email: Irene.Adams@icc-demo.corp
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

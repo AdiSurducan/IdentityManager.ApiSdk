@@ -1,13 +1,17 @@
 meta {
   name: exercise3
   type: http
-  seq: 5
+  seq: 10
 }
 
 get {
-  url: {{baseUrl}}/portal/exercise3
+  url: {{baseUrl}}/portal/exercise3?remarks=API Development Training
   body: none
   auth: inherit
+}
+
+params:query {
+  remarks: API Development Training
 }
 
 settings {

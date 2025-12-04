@@ -27,8 +27,14 @@ namespace Api
             builder.AddMethod(Method.Define("exercise3")
                .FromTable("Person")
                .EnableRead()
-               .WithResultColumns("EntryDate","FirstName","LastName")
-               .WithWhereClause("Remarks = 'API Development Training'")
+               .WithResultColumns("EntryDate", "FirstName", "LastName")
+               .WithParameter("remarks")
+               .WithWhereClause((request) =>
+               {
+                   var remarksValue = request.Parameters.Get<string>("remarks");
+                   return String.Format("Remarks = '{0}'", remarksValue);
+
+               })
                .WithCalculatedProperties(new CalculatedProperty<string>("EntryDateWeekday",
 
                    context =>
@@ -54,6 +60,23 @@ namespace Api
                .EnableCreate()
                .WithWritableAllColumns()
            );
+
+
+            builder.AddMethod(Method.Define("exercise8")
+               .FromTable("Person")
+               .EnableRead()
+               .WithParameter("email")
+               .WithWhereClause((request) =>
+               {
+                   var emailValue = request.Parameters.Get<string>("email");
+                   return String.Format("DefaultEmailAddress = '{0}'", emailValue);
+
+               })
+               .WithResultColumns("JPegPhoto")
+
+
+
+             );
 
         }
 
