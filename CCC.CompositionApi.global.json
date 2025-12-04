@@ -1,0 +1,13 @@
+{
+    "Scopes": [
+    {
+     "AppliesTo": "imx",
+     "Ignore": false,
+     "Data": {
+      "ServerLevelConfig/XsrfProtectionDisabled": true,
+      "ServerLevelConfig/SameSite": "Lax",
+      "ServerLevelConfig/OAuthAllowedRedirectDomains": ["http://localhost:8182"]
+     }
+    }
+    ]
+   }
