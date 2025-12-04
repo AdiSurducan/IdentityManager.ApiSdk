@@ -1,0 +1,36 @@
+meta {
+  name: exercise5
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/portal/generic/PersonHasESet
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "Reload": true,
+    "Objects": [
+      {
+        "Data": [
+          {
+            "Name": "UID_ESet",
+            "Value": "eede8405-bf44-4861-be83-607b4d8d51f2"
+          },
+          {
+            "Name": "UID_Person",
+            "Value": "d7191e55-2f36-44be-aeb4-e5a08ceffacb"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

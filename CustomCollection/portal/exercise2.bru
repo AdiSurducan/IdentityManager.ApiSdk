@@ -1,0 +1,44 @@
+meta {
+  name: exercise2
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/portal/exercise2
+  body: json
+  auth: inherit
+}
+
+params:query {
+  : 
+}
+
+body:json {
+  {
+    "Reload": true,
+    "Objects": [
+      {
+        "Data": [
+          {
+            "Name": "FirstName",
+            "Value": "KayCRUD"
+          },
+          {
+            "Name": "LastName",
+            "Value": "KayCRUD"
+          },
+          {
+            "Name": "Remarks",
+            "Value": "API Development Training"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
