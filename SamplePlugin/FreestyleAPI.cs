@@ -1,9 +1,11 @@
 ﻿using QBM.CompositionApi.Crud;
 using QBM.CompositionApi.DataSources;
+using QBM.CompositionApi.DataSources.SqlWizard;
 using QBM.CompositionApi.Definition;
 using QBM.CompositionApi.Handling;
 using QER.CompositionApi.Portal;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using VI.DB;
@@ -43,18 +45,36 @@ namespace Api
                .Handle<Identity, Identity>("POST", (person, qr) =>
                {
                    IEntity createPerson = qr.Session.Source().CreateNew("Person");
+                   IEntity assignEset = qr.Session.Source().CreateNew("PersonHasEset");
 
+          
                    createPerson.PutValue("FirstName", person.FirstName);
                    createPerson.PutValue("LastName", person.LastName);
                    createPerson.PutValue("Remarks", person.Remarks);
-
                    createPerson.Save(qr.Session);
+
+                   assignEset.PutValue("UID_Person", createPerson.GetValue("UID_Person"));
+
+
+                   string UID_Eset = qr.Session.Source().GetSingleValue<string>(tablename:"ESet", columnname:"UID_ESet", whereclause:$"Ident_Eset='{person.ESet}'");
+
+                   assignEset.PutValue("UID_Eset", UID_Eset);
+
+                   assignEset.Save(qr.Session);
+
+
+                   var uow = qr.Session.StartUnitOfWork();
+                   System.Threading.Thread.Sleep(5000);
+                   uow.Generate(assignEset, "CREATEITSHOPORDER");
+                  
+                   uow.Commit();
 
 
                    Identity returnedPerson = new Identity();
                    returnedPerson.FirstName = person.FirstName;
                    returnedPerson.LastName = person.LastName;
                    returnedPerson.Remarks = person.Remarks;
+                   returnedPerson.ESet = person.ESet;
 
                    return returnedPerson;
                })
@@ -67,7 +87,7 @@ namespace Api
                {
                    var collection = await request.Session.Source().GetCollectionAsync(
                        Query.From("Person")
-                       .Select("FirstName", "LastName","Remarks")
+                       .Select("FirstName", "LastName","Remarks","EntryDate")
                        .Where("Remarks='API Development Training'")).ConfigureAwait(false);
 
                    Identity[] names = [];
@@ -79,6 +99,11 @@ namespace Api
                        returnedPerson.FirstName = Identity.GetValue("FirstName").ToString();
                        returnedPerson.LastName = Identity.GetValue("LastName").ToString();
                        returnedPerson.Remarks = Identity.GetValue("Remarks").ToString();
+
+
+
+
+                       returnedPerson.EntryDateWeekday = Identity.GetValue("EntryDate").ToDateTime(CultureInfo.InvariantCulture).ToString("dddd", CultureInfo.InvariantCulture);
 
                        names = names.Append(returnedPerson).ToArray();
 
@@ -129,5 +154,6 @@ namespace Api
         public string UID_Person { get; set; }
         public string NewName { get; set; }
         public string ESet { get; set; }
+        public string EntryDateWeekday { get; set; }
     }
 }
