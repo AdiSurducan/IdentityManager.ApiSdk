@@ -1,4 +1,5 @@
-﻿using QBM.CompositionApi.Config;
+﻿using QBM.CompositionApi.ApiManager;
+using QBM.CompositionApi.Config;
 using QBM.CompositionApi.Crud;
 using QBM.CompositionApi.DataSources;
 using QBM.CompositionApi.DataSources.SqlWizard;
